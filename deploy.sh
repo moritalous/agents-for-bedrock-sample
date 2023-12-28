@@ -16,7 +16,7 @@ if [[ -n "${AGENT_ID}" ]]; then
   aws lambda add-permission \
    --function-name ${LAMBDA_NAME} \
    --action lambda:InvokeFunction \
-   --statement-id amazon-bedrock-agent \
+   --statement-id agent-${AGENT_ID} \
    --principal bedrock.amazonaws.com \
    --source-arn arn:aws:bedrock:${AWS_REGION}:${AWS_ACCOUNT_ID}:agent/${AGENT_ID} \
    ${PROFILE}
